@@ -1,4 +1,7 @@
 import {useState, useEffect} from "react";
+import {Table} from "react-bootstrap";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
 
 const gamemodes = {
   "CONQ": "Conquest",
@@ -59,11 +62,11 @@ function ServerBrowser() {
   }, [data]);
 
   return (
-      <div className="main-wrapper">
+      <div className="container">
         <div>Players online <span style={{color: "white", fontWeight: "bold"}}>{totalPlayers}</span> | Players in queue <span style={{color: "white", fontWeight: "bold"}}>{totalQueuePlayers}</span></div>
 
         <div className={"server-list"}>
-          <table>
+          <Table className={"table table-borderless"} variant={"custom"}>
             <tbody>
               <tr className={"server-list-items server-list-header"}>
                 <th>Map Name</th>
@@ -82,14 +85,15 @@ function ServerBrowser() {
                       <td>{d['Players']}/{d['MaxPlayers']} ({d['QueuePlayers']})</td>
                       <td><img src={serverLocation[d['Region']]} alt={d['Region']} /></td>
                       <td>{d['DayNight'] === 'Day' ?
-                          <i className="fa-regular fa-sun day-icon" /> :
-                          <i className="fa-regular fa-moon night-icon" />}
+                          <FontAwesomeIcon icon={faSun} className={"day-icon"}/> :
+                          <FontAwesomeIcon icon={faMoon} className={"night-icon"}/>
+                      }
                       </td>
                     </tr>
                 ))
               }
             </tbody>
-          </table>
+          </Table>
         </div>
 
       </div>

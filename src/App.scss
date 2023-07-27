@@ -1,30 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+@import "node_modules/bootstrap/scss/_functions.scss";
 
-$dark-blue: #222222;
+$darker-gray: #1e1e1e;
+$dark-gray: #222222;
 $light-gray: #adadad;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 * {
   font-family: 'Rubik', sans-serif !important;
 }
 
 body {
-  background-color: $dark-blue !important;;
+  background-color: $dark-gray !important;;
   color: $light-gray !important;;
 }
 
-.main-wrapper {
-  margin-left: 10rem;
-  margin-right: 10rem;
+.nav-header {
+  background-color: $darker-gray;
+
+  .navbar-toggler {
+    background-color: $light-gray;
+    border-radius: 0;
+  }
+
+  .navbar-brand {
+    color: white;
+  }
+
+  a {
+    color: $light-gray;
+  }
+
+  .disabled {
+    color: darken($light-gray, 30%) !important;
+  }
+
+  a:hover {
+    color: white;
+  }
 }
 
 .server-list {
 
   font-size: 1.2rem;
 
-  table {
+  .table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 0.6rem;
+    background-color: $dark-gray;
+    /*border-collapse: separate;
+    border-spacing: 0 0.6rem;*/
 
     th {
       color: white;
@@ -57,3 +92,10 @@ body {
     color: #2eaaea;
   }
 }
+
+.table-custom {
+  --bs-table-bg: $darker-gray !important;
+  --bs-table-color: $light-gray !important;
+}
+
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
