@@ -23,3 +23,10 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### TODO
+* Allow filtering of servers by map name
+* Allow sorting by player count
+* Add Weapons tab to view information about the different weapons in the game and the level they unlock at.
+* Deploy to Cloudflare pages
+* Setup google analytics

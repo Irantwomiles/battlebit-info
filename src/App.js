@@ -81,7 +81,7 @@ function App() {
                       <td>{gamemodes[d['Gamemode']]}</td>
                       <td>{d['MapSize']}</td>
                       <td>{d['Players']}/{d['MaxPlayers']} ({d['QueuePlayers']})</td>
-                      <td><img src={serverLocation[d['Region']]} /></td>
+                      <td><img src={serverLocation[d['Region']]} alt={d['Region']} /></td>
                       <td>{d['DayNight'] === 'Day' ? <i className="fa-regular fa-sun day-icon"/> :
                           <i className="fa-regular fa-moon night-icon"/>}</td>
                     </tr>
