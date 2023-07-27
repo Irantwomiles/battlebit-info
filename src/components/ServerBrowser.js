@@ -1,5 +1,3 @@
-import './App.scss';
-
 import {useState, useEffect} from "react";
 
 const gamemodes = {
@@ -15,10 +13,11 @@ const serverLocation = {
   "Europe_Central": "https://img.icons8.com/?size=1x&id=21742&format=png",
   "Brazil_Central": "https://img.icons8.com/?size=1x&id=15509&format=png",
   "America_Central": "https://img.icons8.com/?size=1x&id=15532&format=png",
-  "Japan_Central": "https://img.icons8.com/?size=1x&id=22435&format=png"
+  "Japan_Central": "https://img.icons8.com/?size=1x&id=22435&format=png",
+  "Australia_Central": "https://img.icons8.com/?size=1x&id=22557&format=png"
 }
 
-function App() {
+function ServerBrowser() {
 
   const [data, setData] = useState([]);
   const [totalPlayers, setTotalPlayers] = useState("--");
@@ -82,8 +81,10 @@ function App() {
                       <td>{d['MapSize']}</td>
                       <td>{d['Players']}/{d['MaxPlayers']} ({d['QueuePlayers']})</td>
                       <td><img src={serverLocation[d['Region']]} alt={d['Region']} /></td>
-                      <td>{d['DayNight'] === 'Day' ? <i className="fa-regular fa-sun day-icon"/> :
-                          <i className="fa-regular fa-moon night-icon"/>}</td>
+                      <td>{d['DayNight'] === 'Day' ?
+                          <i className="fa-regular fa-sun day-icon" /> :
+                          <i className="fa-regular fa-moon night-icon" />}
+                      </td>
                     </tr>
                 ))
               }
@@ -96,4 +97,4 @@ function App() {
 }
 
 
-export default App;
+export default ServerBrowser;

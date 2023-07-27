@@ -3,14 +3,13 @@
 $dark-blue: #222222;
 $light-gray: #adadad;
 
-
 * {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Rubik', sans-serif !important;
 }
 
 body {
-  background-color: $dark-blue;
-  color: $light-gray;
+  background-color: $dark-blue !important;;
+  color: $light-gray !important;;
 }
 
 .main-wrapper {
